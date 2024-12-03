@@ -1,13 +1,14 @@
-import java.util.Scanner;
-
 public class PrimeCheck {
-    public static void main(String[] args) {
-        int num, temp = 0;
-        Scanner scanner = new Scanner(System.in);
 
-        // Read input from user
-        System.out.print("Enter any number to check for prime: ");
-        num = scanner.nextInt();
+    public static void main(String[] args) {
+        // You can call the checkPrime method with any number here
+        int num = 29;  // Example: Change this number to check other values
+        checkPrime(num);  // Call static method to check if the number is prime
+    }
+
+    // Static method to check if the number is prime
+    public static void checkPrime(int num) {
+        int temp = 0;
 
         // Iterate up to num/2
         for (int i = 2; i <= num / 2; i++) {
@@ -24,7 +25,5 @@ public class PrimeCheck {
         } else {
             System.out.println(num + " is not a Prime number");
         }
-
-        scanner.close();
     }
 }
