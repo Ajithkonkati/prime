@@ -1,55 +1,30 @@
-#include <stdio.h>
+import java.util.Scanner;
 
-int main()
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int num, temp = 0;
+        Scanner scanner = new Scanner(System.in);
 
-{
+        // Read input from user
+        System.out.print("Enter any number to check for prime: ");
+        num = scanner.nextInt();
 
-    int i, num, temp = 0; 
-
-    // read input from user.
-
-    printf("Enter any numb to Check for Prime: ");
-
-    scanf("%d", &num);
-
-    // iterate up to n/2.
-
-    for (i = 2; i <= num / 2; i++)
-
-    {
-
-        // check if num is divisible by any number.
-
-        if (num % i == 0)
-
-        {
-
-            temp++;
-
-            break;
-
+        // Iterate up to num/2
+        for (int i = 2; i <= num / 2; i++) {
+            // Check if num is divisible by any number
+            if (num % i == 0) {
+                temp++;
+                break;
+            }
         }
 
-    } 
+        // Check for the value of temp and num
+        if (temp == 0 && num != 1) {
+            System.out.println(num + " is a Prime number");
+        } else {
+            System.out.println(num + " is not a Prime number");
+        }
 
-    // check for the value of temp and num. 
-
-    if (temp == 0 && num != 1)
-
-    {
-
-        printf("%d is a Prime number", num);
-
+        scanner.close();
     }
-
-    else
-
-    {
-
-        printf("%d is not a Prime number", num);
-
-    }
-
-    return 0;
-
 }
